@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h2>JS example 2</h2>
+        <p>This example shows a JS function that interacts with the user.</p>
+        
+        <p id="demo"></p>
+        <button onclick="myFunction('yo!')">Click me!</button>
+
+        <script>
+            var x = "testing testing!";
+            myFunction(x);
+
+            function myFunction(x) {
+                document.getElementById("demo").innerHTML = x;
+            }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+    <body>
+
+        <h2>JS example</h2>
+        <p>This example shows a JS function that uses bootstrap.</p>
+
+        <button onclick="myFunction('yo!')" class="btn btn-primary">Click me!</button>
+        <p id="nameDisplay"></p>
+       
+        <script>
+
+            function myFunction() {
+                // word lists
+                var firstPart = ["The Coldness of", "The Journey to", "Altered by", "A Parallel of", "The Return of"];
+                var secondPart = ["the Coming Order","the Relationship of Command","Evil Android", "Cybernetic Brain"];
+                var name = firstPart[Math.floor(Math.random() * firstPart.length)] + " " + secondPart[Math.floor(Math.random() * secondPart.length)];
+                // random = 0 -> 0.99999
+                // .length = number of elements (eg. [0], [1], [2] = 3 elements)
+                // resulting number is 0 -> 3.99999
+                // floor truncates to an integer - ie. 0 -> 3
+
+                // append to placeholder div
+                var element = document.createElement("p"); // I think this needs to match the html element
+                element.setAttribute("id","nameDisplay"); // match the html element
+                element.appendChild(document.createTextNode(name)); // put the data as a text node into the element
+                document.getElementById("nameDisplay").appendChild(element); // display the element in the document
+
+            }
+        </script>
+
+    </body>
+</html>

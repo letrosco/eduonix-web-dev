@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>AJAX example</h1>
+
+        <p>simple example showing AJAX loading in the background</p>
+
+        <button type="button" onclick="getJSON()">Get the users</button>
+        <table id="users"></table>
+
+        <script>
+
+            function getJSON() {
+                var ajax_req = new XMLHttpRequest(); // this IS AJAX
+                ajax_req.open('GET', 'https://api.github.com/users', true);
+
+                ajax_req.onload = function() { // everythign can continue running while the data loads. Once it is loaded then this function is run.
+                    // status 200 = OK
+                    if (this.status === 200) {
+                        var json = JSON.parse(this.responseText);
+                        var row = '';
+                        for (i in json) {
+                            row += '<tr><td>' + json[i].login + '</td><td><img src="' + json[i].avatar_url + '"</td></tr>';
+                        } 
+                    } else {
+                        alert('oops');
+                        alert('status = ' + this.status);
+                    }
+                    document.getElementById('users').innerHTML = row;
+                }
+            }
+        </script>
+    </body>
+</html>

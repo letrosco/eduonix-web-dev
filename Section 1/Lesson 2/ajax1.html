@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>AJAX example</h1>
+
+        <p>simple example showing AJAX loading in the background</p>
+
+        <button type="button" onclick="myFunction()">Click me!</button>
+        <p id="demo"></p>
+
+        <script>
+
+            var x = "Working, please wait";
+
+            function myFunction() {
+                document.getElementById("demo").innerHTML = x;
+                x += '.';
+            }
+            
+        </script>
+    </body>
+</html>
